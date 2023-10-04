@@ -49,9 +49,10 @@ Route::get('factories/{factory}/delete', [FactoryController::class, 'delete'])->
 
 /* Sales Group Routes-----START*/
 
-Route::get('/sales/master', [SaleController::class, 'master'])->name('sales.master');
-Route::get('/sales/create', [SaleController::class, 'create'])->name('sales.create');
-Route::post('/sales/store', [SaleController::class, 'store'])->name('sales.store');
+Route::get('sales/master', [SaleController::class, 'master'])->name('sales.master');
+Route::get('sales/create', [SaleController::class, 'create'])->name('sales.create');
+Route::post('sales/store', [SaleController::class, 'store'])->name('sales.store');
+Route::get('sales/{sale}/edit', [SaleController::class, 'edit'])->name('sales.edit');
 
 /* Sales Group Routes-----END*/
 

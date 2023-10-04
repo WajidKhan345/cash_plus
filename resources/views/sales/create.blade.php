@@ -2,7 +2,7 @@
 @section('content')
     <div class="container-fluid bg-dark text-light py-1 ">
         <header class="text-center">
-            <h1 class="display-10">Sales Dashboard</h1>
+            <h1 class="display-10">Sales Entry</h1>
         </header>
     </div>
     <section class="container my-2 w-100 bg-info text-black p-2">

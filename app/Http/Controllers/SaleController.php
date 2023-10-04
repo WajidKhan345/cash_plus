@@ -47,5 +47,8 @@ class SaleController extends Controller
         return redirect(route('sales.master'));
 
     }
+    public function edit(Sale $sale){
+        dd($sale);
+    }
 
 }

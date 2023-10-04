@@ -81,7 +81,7 @@
                                             <td>{{ $sale->Description }}</td>
                                             <td>
 
-                                                <a href=""
+                                                <a href="{{ route('sales.edit', ['sale' => $sale])}}" 
                                                     title="Edit Factory"><button class="btn btn-primary btn-sm"><i
                                                             class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                         Edit</button></a>
