@@ -78,7 +78,7 @@
             </div>
             <div class="col-md-6">
                 <label for="inputRemainingamount" class="form-label">Remaining Amount</label>
-                <input type="text" class="form-control" name="remaning_amount" id="inputRemainingamount">
+                <input type="text" class="form-control" name="remaining_amount" id="inputRemainingamount">
             </div>
             <div class="col-md-6">
                 <label for="inputDiscount" class="form-label">Discount</label>

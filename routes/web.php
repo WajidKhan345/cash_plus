@@ -53,6 +53,8 @@ Route::get('sales/master', [SaleController::class, 'master'])->name('sales.maste
 Route::get('sales/create', [SaleController::class, 'create'])->name('sales.create');
 Route::post('sales/store', [SaleController::class, 'store'])->name('sales.store');
 Route::get('sales/{sale}/edit', [SaleController::class, 'edit'])->name('sales.edit');
+Route::put('sales/{sale}/update', [SaleController::class, 'update'])->name('sales.update');
+Route::get('sales/{sale}/delete', [SaleController::class, 'delete'])->name('sales.delete');
 
 /* Sales Group Routes-----END*/
 

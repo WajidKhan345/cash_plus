@@ -75,7 +75,7 @@
                                             <td>{{ $sale->agent_amount }}</td>
                                             <td>{{ $sale->safi_amount }}</td>
                                             <td>{{ $sale->recieved_amount }}</td>
-                                            <td>{{ $sale->remaning_amount }}</td>
+                                            <td>{{ $sale->remaining_amount }}</td>
                                             <td>{{ $sale->discount }}</td>
                                             <td>{{ $sale->extra_amount }}</td>
                                             <td>{{ $sale->Description }}</td>
@@ -86,15 +86,15 @@
                                                             class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                         Edit</button></a>
 
-                                                <form method=""
-                                                    action=""
+                                                <form method="get"
+                                                    action="{{ route('sales.delete', ['sale' => $sale])}}"
                                                     accept-charset="UTF-8" style="display:inline">
                                                     @csrf
                                                     @method('delete')
 
                                                     <button type="submit" class="btn btn-danger btn-sm"
-                                                        title="Delete Factory"
-                                                        onclick="return confirm('Are you sure you want to delete this driver?')"><i
+                                                        title="Delete Sale"
+                                                        onclick="return confirm('Are you sure you want to delete this sale?')"><i
                                                             class="fa fa-trash-o" aria-hidden="true"></i>
                                                         Delete</button>
                                                 </form>

@@ -7,9 +7,9 @@
     </div>
     <section class="container my-2 w-100 bg-info text-black p-2">
 
-        <form class="row g-3 p-2" method="post" action="{{route('sales.store')}}">
+        <form class="row g-3 p-2" method="post" action="{{route('sales.update', ['sale' => $sale])}}">
             @csrf
-            @method('post')
+            @method('put')
             <div class="col-md-4">
                 <label for="inputFactory" class="form-label">Factory Name</label>
                 <select id="inputFactory" class="form-select" name="factory_id">
@@ -78,7 +78,7 @@
             </div>
             <div class="col-md-6">
                 <label for="inputRemainingamount" class="form-label">Remaining Amount</label>
-                <input type="text" class="form-control" name="remaning_amount" id="inputRemainingamount" value="{{$sale->remaining_amount}}">
+                <input type="text" class="form-control" name="remaining_amount" id="inputRemainingamount" value="{{$sale->remaining_amount}}">
             </div>
             <div class="col-md-6">
                 <label for="inputDiscount" class="form-label">Discount</label>
