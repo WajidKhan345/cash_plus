@@ -48,7 +48,10 @@ class SaleController extends Controller
 
     }
     public function edit(Sale $sale){
-        dd($sale);
+        $drivers  = Driver::all();
+        $factories = Factory::all();
+        return view('sales.edit', compact('sale', 'drivers', 'factories'));
+
     }
 
 }
