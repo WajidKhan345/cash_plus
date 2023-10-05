@@ -17,15 +17,18 @@
                         @endif
                     </div>
                     <div class="card-body">
-                        <a href="{{ route('sales.create') }}" class="btn btn-success btn-sm" title="Add New Sale">
-                            Add New Sale
-                        </a>
-                        <div>
+                        <div class="d-inline-flex p-2 border border-dark rounded-circle">
+                            <a href="{{ route('sales.create') }}" class="btn btn-success btn-sm" title="Add New Sale">
+                                Add New Sale
+                            </a>
+                        </div>
+                        
+                        <div class="d-inline-flex p-2 border border-primary rounded-circle">
                             <a href="{{ route('factories.master') }}" class="btn btn-success btn-sm" title="Factories Record">
                                 Show Factories Record
                             </a>
                         </div>
-                        <div>
+                        <div class="d-inline-flex p-2 border border-info rounded-circle">
                             <a href="{{ route('driver.index') }}" class="btn btn-success btn-sm" title="Drivers Record">
                                 Show Drivers Record
                             </a>
