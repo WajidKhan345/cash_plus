@@ -34,5 +34,8 @@ class Sale extends Model
     public function driver() {
         return $this->belongsTo(Driver::class);
     }
+    public function payments(){
+        return $this->hasMany(Payment::class);
+    }
 
 }

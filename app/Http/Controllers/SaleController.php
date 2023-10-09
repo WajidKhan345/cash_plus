@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Driver;
 use App\Models\Factory;
+use App\Models\Payment;
 use App\Models\Sale;
 use Illuminate\Http\Request;
 
@@ -80,6 +81,29 @@ class SaleController extends Controller
         $sale->delete();
         return redirect(route('sales.master'))->with('success', 'Sale Deleted Successfully');
 
+    }
+
+    public function payment(Sale $sale) {
+        return view('payments.create', compact('sale'));
+    }
+
+    public function storePayment(Request $request) {
+        // dd($request->all());
+
+        $data = $request->validate([
+            'date' => 'required',
+            'sale_id' => 'required',
+            'amount' => 'required',
+            'description' => 'nullable'
+        ]);
+
+        
+        $newPayment = Payment::create($data);
+        return redirect(route('sales.master'));
+    }
+    public function payments(Sale $sale){
+        $sale = $sale->load('payments');
+        return view('payments.show', compact('sale'));
     }
 
     

@@ -22,9 +22,10 @@
                                 Add New Sale
                             </a>
                         </div>
-                        
+
                         <div class="d-inline-flex p-2 border border-primary rounded-circle">
-                            <a href="{{ route('factories.master') }}" class="btn btn-success btn-sm" title="Factories Record">
+                            <a href="{{ route('factories.master') }}" class="btn btn-success btn-sm"
+                                title="Factories Record">
                                 Show Factories Record
                             </a>
                         </div>
@@ -57,6 +58,7 @@
                                         <th>Discount</th>
                                         <th>Extra Amount</th>
                                         <th>Description</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -81,20 +83,30 @@
                                             <td>{{ $sale->extra_amount }}</td>
                                             <td>{{ $sale->Description }}</td>
                                             <td>
-
-                                                <a href="{{ route('sales.edit', ['sale' => $sale])}}" 
-                                                    title="Edit Factory"><button class="btn btn-primary btn-sm"><i
+                                                <a href="{{ route('sales.payment', $sale->id) }}"
+                                                    title="Payment"><button class="btn btn-info btn-sm"><i
                                                             class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                        Edit</button></a>
+                                                        Payment</button>
+                                                </a>
+                                                <a href="{{ route('sales.payments', $sale->id) }}"
+                                                    title="Payments"><button class="btn btn-secondary btn-sm"><i
+                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                        Payments</button>
+                                                </a>
+
+                                                <a href="{{ route('sales.edit', ['sale' => $sale]) }}"
+                                                    title="Edit Sale"><button class="btn btn-primary btn-sm"><i
+                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                        Edit</button>
+                                                </a>
 
                                                 <form method="get"
-                                                    action="{{ route('sales.delete', ['sale' => $sale])}}"
+                                                    action="{{ route('sales.delete', ['sale' => $sale]) }}"
                                                     accept-charset="UTF-8" style="display:inline">
                                                     @csrf
                                                     @method('delete')
 
-                                                    <button type="submit" class="btn btn-danger btn-sm"
-                                                        title="Delete Sale"
+                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete Sale"
                                                         onclick="return confirm('Are you sure you want to delete this sale?')"><i
                                                             class="fa fa-trash-o" aria-hidden="true"></i>
                                                         Delete</button>

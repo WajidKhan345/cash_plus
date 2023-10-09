@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\FactoryController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SaleController;
+use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,9 +57,17 @@ Route::post('sales/store', [SaleController::class, 'store'])->name('sales.store'
 Route::get('sales/{sale}/edit', [SaleController::class, 'edit'])->name('sales.edit');
 Route::put('sales/{sale}/update', [SaleController::class, 'update'])->name('sales.update');
 Route::get('sales/{sale}/delete', [SaleController::class, 'delete'])->name('sales.delete');
-
+Route::get('sales/{sale}/payment', [SaleController::class, 'payment'])->name('sales.payment');
+Route::get('sales/{sale}/payments', [SaleController::class, 'payments'])->name('sales.payments');
+Route::post('sales/payment', [SaleController::class, 'storePayment'])->name('sales.payment.store');
 /* Sales Group Routes-----END*/
 
+
+/*Payments Group Routes----- START-------*/
+
+// Route::get('payments/master', [PaymentController::class, 'master'])->name('payments.master');
+
+/* Payments Group Routes----- END-------*/
 
 
 
