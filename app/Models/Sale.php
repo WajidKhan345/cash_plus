@@ -20,7 +20,6 @@ class Sale extends Model
     'agent_amount',
     'safi_amount',
     'recieved_amount',
-    'remaining_amount',
     'discount',
     'extra_amount',
     'Description',

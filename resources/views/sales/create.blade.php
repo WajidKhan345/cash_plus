@@ -38,55 +38,51 @@
             </div>
             <div class="col-md-3">
                 <label for="inputDrang" class="form-label">Drang Commission</label>
-                <input type="text" class="form-control" name="drang_commission" id="inputDrang">
+                <input type="number" class="form-control" name="drang_commission" id="inputDrang">
             </div>
             <div class="col-md-3">
                 <label for="inputWeight" class="form-label">Weight</label>
-                <input type="text" class="form-control" name="weight" id="inputWeight">
+                <input type="number" class="form-control" name="weight" onkeyup="multiplyBy()" onchange="multiplyBy()" id="inputWeight">
             </div>
             <div class="col-3">
                 <label for="inputRate" class="form-label">Rate</label>
-                <input type="text" class="form-control" name="rate" id="inputRate">
+                <input type="number" class="form-control" name="rate" onkeyup="multiplyBy()" onchange="multiplyBy()" id="inputRate">
             </div>
             <div class="col-md-3">
                 <label for="inputTotalamout" class="form-label">Total Amount</label>
-                <input type="text" class="form-control" name="total_amount" id="inputTotalamount">
+                <input type="number" class="form-control" name="total_amount" id="inputTotalamount" readonly>
             </div>
             <div class="col-md-3">
                 <label for="inputDriverprize" class="form-label">Driver Prize</label>
-                <input type="text" class="form-control" name="driver_prize" id="inputDriverprize">
+                <input type="number" class="form-control" name="driver_prize" id="inputDriverprize">
             </div>
             <div class="col-md-3">
                 <label for="inputMineral" class="form-label">Mineral</label>
-                <input type="text" class="form-control" name="mineral" id="inputMineral">
+                <input type="number" class="form-control" name="mineral" id="inputMineral">
             </div>
             <div class="col-md-3">
-                <label for="inputGovtax" class="form-label">Gov. Tax</label>
-                <input type="text" class="form-control" name="gov_tax" id="inputGovtax">
+                <label for="inputGovtax" class="form-label">G Tax</label>
+                <input type="number" class="form-control" name="gov_tax" id="inputGovtax">
             </div>
             <div class="col-md-3">
                 <label for="inputAgentamount" class="form-label">Agent Amount</label>
-                <input type="text" class="form-control" name="agent_amount" id="inputAgentamount">
+                <input type="number" class="form-control" name="agent_amount" id="inputAgentamount">
             </div>
             <div class="col-md-3">
                 <label for="inputSafiamount" class="form-label">Safi Amount</label>
-                <input type="text" class="form-control" name="safi_amount" id="inputSafiamount">
+                <input type="number" class="form-control" name="safi_amount" id="inputSafiamount">
             </div>
             <div class="col-md-3">
                 <label for="inputReceivedamount" class="form-label">Recieved Amount</label>
-                <input type="text" class="form-control" name="recieved_amount" id="inputReceivedamount">
-            </div>
-            <div class="col-md-3">
-                <label for="inputRemainingamount" class="form-label">Remaining Amount</label>
-                <input type="text" class="form-control" name="remaining_amount" id="inputRemainingamount">
+                <input type="number" class="form-control" name="recieved_amount" id="inputReceivedamount">
             </div>
             <div class="col-md-3">
                 <label for="inputDiscount" class="form-label">Discount</label>
-                <input type="text" class="form-control" name="discount" id="inputDiscount">
+                <input type="number" class="form-control" name="discount" id="inputDiscount">
             </div>
             <div class="col-md-3">
                 <label for="inputExtra" class="form-label">Extra Amount</label>
-                <input type="text" class="form-control" name="extra_amount" id="inputExtra">
+                <input type="number" class="form-control" name="extra_amount" id="inputExtra">
             </div>
             <div class="col-md-6">
                 <label for="inputDescription" class="form-label">Description</label>
@@ -95,6 +91,14 @@
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button type="submit" class="btn btn-primary me-md-3">Add New Sale</button>
             </div>
+            <script>
+                function multiplyBy()
+                {
+                  num1 = document.getElementById("inputWeight").value;
+                  num2 = document.getElementById("inputRate").value;
+                  document.getElementById("inputTotalamount").value = num1 * num2;
+                }
+            </script>
         </form>
 
 
