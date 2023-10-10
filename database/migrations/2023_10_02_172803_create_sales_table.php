@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('gov_tax', 100);
             $table->string('agent_amount', 100);
             $table->string('safi_amount', 100);
-            $table->string('recieved_amount', 100);
             $table->string('discount', 100);
             $table->string('extra_amount', 100);
             $table->string('Description', 100);

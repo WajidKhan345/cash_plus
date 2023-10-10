@@ -19,7 +19,6 @@ class Sale extends Model
     'gov_tax',
     'agent_amount',
     'safi_amount',
-    'recieved_amount',
     'discount',
     'extra_amount',
     'Description',

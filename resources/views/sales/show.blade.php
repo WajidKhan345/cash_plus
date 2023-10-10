@@ -54,7 +54,6 @@
                                         <th>Gov. Tax</th>
                                         <th>Agent Amount</th>
                                         <th>Safi Amount</th>
-                                        <th>Recieved Amount</th>
                                         <th>Discount</th>
                                         <th>Extra Amount</th>
                                         <th>Description</th>
@@ -78,7 +77,6 @@
                                             <td>{{ $sale->gov_tax }}</td>
                                             <td>{{ $sale->agent_amount }}</td>
                                             <td>{{ $sale->safi_amount }}</td>
-                                            <td>{{ $sale->recieved_amount }}</td>
                                             <td>{{ $sale->discount }}</td>
                                             <td>{{ $sale->extra_amount }}</td>
                                             <td>{{ $sale->Description }}</td>

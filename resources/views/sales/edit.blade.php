@@ -73,10 +73,6 @@
                 <input type="number" class="form-control" name="safi_amount" id="inputSafiamount" value="{{$sale->safi_amount}}">
             </div>
             <div class="col-md-6">
-                <label for="inputReceivedamount" class="form-label">Recieved Amount</label>
-                <input type="number" class="form-control" name="recieved_amount" id="inputReceivedamount" value="{{$sale->recieved_amount}}">
-            </div>
-            <div class="col-md-6">
                 <label for="inputDiscount" class="form-label">Discount</label>
                 <input type="number" class="form-control" name="discount" id="inputDiscount" value="{{$sale->discount}}">
             </div>

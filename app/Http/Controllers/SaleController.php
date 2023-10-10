@@ -45,6 +45,13 @@ class SaleController extends Controller
 
         
         $newSale = Sale::create($data);
+        Payment::create([
+            'sale_id' => $newSale->id,
+            'amount' => $request->recieved_amount,
+            'date' => $request->date,
+            'description' => 'First Payment'
+        ]);
+        
         return redirect(route('sales.master'));
 
     }

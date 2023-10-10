@@ -21,7 +21,6 @@ return new class extends Migration
             $table->unsignedBigInteger('gov_tax')->change();
             $table->unsignedBigInteger('agent_amount')->change();
             $table->unsignedBigInteger('safi_amount')->change();
-            $table->unsignedBigInteger('recieved_amount')->change();
             $table->unsignedBigInteger('discount')->change();
             $table->unsignedBigInteger('extra_amount')->change();
             $table->longText('Description')->change();

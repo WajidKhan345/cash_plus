@@ -25,6 +25,7 @@
                                         <th>ID</th>
                                         <th>Date</th>
                                         <th>Amount</th>
+                                        <th>Sale ID</th>
                                         <th>Description</th>
                                         <th>Actions</th>
                                     </tr>
@@ -35,7 +36,7 @@
                                             <td>{{ $loop->index + 1 }}</td>
                                             <td>{{ $payment->date }}</td>
                                             <td>{{ $payment->amount}}</td>
-                                            {{-- <td>{{ $payment->payments->sale_id }}</td> --}}
+                                            <td>{{ $sale->factory->factory_owner }}</td>
                                             <td>{{ $payment->description }}</td>
                                             <td>
                                                 {{-- <a href="{{ route('sales.payment', $sale->id) }}"
@@ -44,13 +45,13 @@
                                                         Payment</button>
                                                 </a> --}}
 
-                                                {{-- <a href="{{ route('sales.edit', ['sale' => $sale]) }}"
+                                                <a href=""
                                                     title="Edit Sale"><button class="btn btn-primary btn-sm"><i
                                                             class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                         Edit</button>
                                                 </a>
 
-                                                <form method="get"
+                                                {{-- <form method="get"
                                                     action="{{ route('sales.delete', ['sale' => $sale]) }}"
                                                     accept-charset="UTF-8" style="display:inline">
                                                     @csrf
@@ -60,10 +61,14 @@
                                                         onclick="return confirm('Are you sure you want to delete this sale?')"><i
                                                             class="fa fa-trash-o" aria-hidden="true"></i>
                                                         Delete</button>
-                                                </form>
-                                            </td> --}}
+                                                </form> --}}
+                                            </td>
                                         </tr>
                                     @endforeach
+                                    <tr>
+                                        <th>Remaining</th>
+                                        <td>{{$sale->total_amount-$sale->payments->sum('amount')}}</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
