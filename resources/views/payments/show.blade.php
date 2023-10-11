@@ -4,7 +4,7 @@
         <div class="row" style="margin:1px">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header container-fluid bg-success text-light py-1">
                         <h2 style="text-align: center">Per Sale List</h2>
                     </div>
                     <div>
@@ -25,17 +25,25 @@
                                         <th>ID</th>
                                         <th>Date</th>
                                         <th>Amount</th>
+                                        <th>Remaining</th>
                                         <th>Sale ID</th>
                                         <th>Description</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody> 
+                                <tbody>
+                                    @php
+                                        $amountSum = 0;
+                                    @endphp
                                     @foreach ($sale->payments as $payment)
+                                    @php
+                                        $amountSum += $payment->amount;
+                                    @endphp
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
                                             <td>{{ $payment->date }}</td>
                                             <td>{{ $payment->amount}}</td>
+                                            <td>{{ $sale->total_amount - $amountSum }}</td>
                                             <td>{{ $sale->factory->factory_owner }}</td>
                                             <td>{{ $payment->description }}</td>
                                             <td>
@@ -45,8 +53,8 @@
                                                         Payment</button>
                                                 </a> --}}
 
-                                                <a href=""
-                                                    title="Edit Sale"><button class="btn btn-primary btn-sm"><i
+                                                <a href="{{ route('sales.payments.edit', ['payment' => $payment])}}"
+                                                    title="Edit Sale Payment"><button class="btn btn-primary btn-sm"><i
                                                             class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                         Edit</button>
                                                 </a>

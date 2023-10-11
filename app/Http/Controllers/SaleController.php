@@ -90,28 +90,7 @@ class SaleController extends Controller
 
     }
 
-    public function payment(Sale $sale) {
-        return view('payments.create', compact('sale'));
-    }
-
-    public function storePayment(Request $request) {
-        // dd($request->all());
-
-        $data = $request->validate([
-            'date' => 'required',
-            'sale_id' => 'required',
-            'amount' => 'required',
-            'description' => 'nullable'
-        ]);
-
-        
-        $newPayment = Payment::create($data);
-        return redirect(route('sales.master'));
-    }
-    public function payments(Sale $sale){
-        $sale = $sale->load('payments');
-        return view('payments.show', compact('sale'));
-    }
+    
 
     
 

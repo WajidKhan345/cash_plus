@@ -57,15 +57,17 @@ Route::post('sales/store', [SaleController::class, 'store'])->name('sales.store'
 Route::get('sales/{sale}/edit', [SaleController::class, 'edit'])->name('sales.edit');
 Route::put('sales/{sale}/update', [SaleController::class, 'update'])->name('sales.update');
 Route::get('sales/{sale}/delete', [SaleController::class, 'delete'])->name('sales.delete');
-Route::get('sales/{sale}/payment', [SaleController::class, 'payment'])->name('sales.payment');
-Route::get('sales/{sale}/payments', [SaleController::class, 'payments'])->name('sales.payments');
-Route::post('sales/payment', [SaleController::class, 'storePayment'])->name('sales.payment.store');
+
 /* Sales Group Routes-----END*/
 
 
 /*Payments Group Routes----- START-------*/
 
-// Route::get('payments/master', [PaymentController::class, 'master'])->name('payments.master');
+Route::get('sales/{sale}/payment', [PaymentController::class, 'payment'])->name('sales.payment');
+Route::get('sales/{sale}/payments', [PaymentController::class, 'payments'])->name('sales.payments');
+Route::post('sales/payment', [PaymentController::class, 'storePayment'])->name('sales.payment.store');
+Route::get('payments/{payment}/edit', [PaymentController::class, 'edit'])->name('sales.payments.edit');
+Route::post('payments/update', [PaymentController::class, 'update'])->name('sales.payments.update');
 
 /* Payments Group Routes----- END-------*/
 

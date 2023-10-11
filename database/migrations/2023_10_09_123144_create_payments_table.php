@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('amount');
             $table->date('date');
             $table->foreignId('sale_id')->constrained('sales');
-            $table->longText('description');
+            $table->longText('description')->nullable();
 
             $table->timestamps();
         });

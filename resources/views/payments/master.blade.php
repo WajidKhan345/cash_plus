@@ -11,7 +11,6 @@
     <title>Payments Record</title>
   </head>
   <body>
-    master
 
     @if ($errors->any())
         <div class="alert alert-danger">
