@@ -42,6 +42,9 @@ class FactoryController extends Controller
         return redirect(route('factories.master'))->with('success', 'Factory Updated Successfully');
     }
     public function delete(Factory $factory){
+        if(count($factory->sales) > 0) {
+            return back()->with('error', 'This factory cannot be deleted because it has sales attached!');
+        }
         $factory->delete();
         return redirect(route('factories.master'))->with('success', 'Factory Deleted Successfully');
     }

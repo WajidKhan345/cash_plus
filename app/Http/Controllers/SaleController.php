@@ -73,7 +73,6 @@ class SaleController extends Controller
             'gov_tax' => 'required',
             'agent_amount' => 'required',
             'safi_amount' => 'required',
-            'recieved_amount' => 'required',
             'discount' => 'required',
             'extra_amount' => 'required',
             'Description'=> 'nullable',

@@ -71,7 +71,13 @@ Route::post('payments/update', [PaymentController::class, 'update'])->name('sale
 
 /* Payments Group Routes----- END-------*/
 
-
+Route::get('/blog/{id}', function(string $id){
+    if($id){
+        return "<h1>Post ID : $id</h1>";
+    }else{
+        return "<h1>NO Id found</h1>";
+    }
+})->whereNumber('id');
 
 
 

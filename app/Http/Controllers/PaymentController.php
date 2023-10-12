@@ -23,9 +23,8 @@ class PaymentController extends Controller
             'description' => 'nullable'
         ]);
 
-        
         $newPayment = Payment::create($data);
-        return redirect(route('sales.master'));
+        return redirect(route('sales.payments', $data['sale_id']));
     }
     public function payments(Sale $sale){
         $sale = $sale->load('payments');

@@ -86,12 +86,7 @@
                                                             class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                         Payment</button>
                                                 </a>
-                                                <a href="{{ route('sales.payments', $sale->id) }}"
-                                                    title="Payments"><button class="btn btn-secondary btn-sm"><i
-                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                        Payments</button>
-                                                </a>
-
+                                                
                                                 <a href="{{ route('sales.edit', ['sale' => $sale]) }}"
                                                     title="Edit Sale"><button class="btn btn-primary btn-sm"><i
                                                             class="fa fa-pencil-square-o" aria-hidden="true"></i>

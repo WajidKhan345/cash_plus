@@ -5,7 +5,12 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h2 style="text-align: center">All Factories List</h2>
+                        <h2 style="text-align: center">All Factories List
+                            <a type="button" href="{{ route('sales.master') }}"
+                                title="Payments" class="btn btn-info" style="float: left; margin-left: 20px;">
+                                Home
+                            </a>
+                        </h2>
                     </div>
                     <div>
                         @if (session()->has('success'))
@@ -13,6 +18,14 @@
                                 <div>
 
                                   <strong>{{ session('success') }}</strong>  
+                                </div>
+                                
+                        @endif
+                        @if (session()->has('error'))
+                            <div class="alert-danger" role="alert">
+                                <div>
+
+                                  <strong>{{ session('error') }}</strong>  
                                 </div>
                         @endif
                     </div>

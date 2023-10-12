@@ -44,6 +44,9 @@ class DriverController extends Controller
     }
 
     public function delete(Driver $driver){
+        if(count($driver->sales) > 0) {
+            return back()->with('error', 'This driver cannot be deleted because it has sales attached!');
+        }
         $driver->delete();
         return redirect(route('driver.index'))->with('success', 'Driver Deleted Successfully');
     }

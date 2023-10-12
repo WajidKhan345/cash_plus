@@ -4,8 +4,17 @@
         <div class="row" style="margin:1px">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header container-fluid bg-success text-light py-1">
-                        <h2 style="text-align: center">Per Sale List</h2>
+                    <div class="card-header container-fluid bg-success text-light py-2">
+                        <h2 style="text-align: center">Per Sale List
+                            <a type="button" href="{{ route('sales.payment', $sale->id) }}"
+                                title="Payments" class="btn btn-info" style="float: left; margin-left: 20px;">
+                                Payments Entry
+                            </a>
+                            <a type="button" href="{{ route('sales.master', $sale->id) }}"
+                                title="Payments" class="btn btn-info" style="float: right; margin-right: 20px;">
+                                Home
+                            </a>
+                        </h2>
                     </div>
                     <div>
                         @if (session()->has('success'))
@@ -24,9 +33,9 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Date</th>
+                                        <th>Factory Owner</th>
                                         <th>Amount</th>
                                         <th>Remaining</th>
-                                        <th>Sale ID</th>
                                         <th>Description</th>
                                         <th>Actions</th>
                                     </tr>
@@ -42,9 +51,9 @@
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
                                             <td>{{ $payment->date }}</td>
+                                            <td>{{ $sale->factory->factory_owner }}</td>
                                             <td>{{ $payment->amount}}</td>
                                             <td>{{ $sale->total_amount - $amountSum }}</td>
-                                            <td>{{ $sale->factory->factory_owner }}</td>
                                             <td>{{ $payment->description }}</td>
                                             <td>
                                                 {{-- <a href="{{ route('sales.payment', $sale->id) }}"

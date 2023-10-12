@@ -2,8 +2,20 @@
 @section('content')
     <div class="container-fluid bg-success text-light py-1 ">
         <header class="text-center">
-            <h1 class="display-10">Payments Entry</h1>
+            <h1 class="display-10">Payments Entry
+                <a type="button" href="{{ route('sales.payments', $sale->id) }}"
+                    title="Payments" class="btn btn-info" style="float: right; margin-right: 20px;">
+                    Payments list
+                </a>
+                <a type="button" href="{{ route('sales.master', $sale->id) }}"
+                    title="Payments" class="btn btn-info" style="float: left; margin-left: 20px;">
+                    Home
+                </a>
+            </h1>
         </header>
+    </div>
+    <div class="p-3">
+        
     </div>
     <section class="container my-2 w-100  text-black p-2 border border-primary rounded">
 
