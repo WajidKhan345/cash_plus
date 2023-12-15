@@ -1,4 +1,4 @@
-@extends('payments.master')
+@extends('layouts.admin.app')
 @section('content')
     <div class="container-fluid bg-success text-light py-1 ">
         <header class="text-center">

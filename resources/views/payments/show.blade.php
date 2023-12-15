@@ -1,10 +1,10 @@
-@extends('payments.master')
+@extends('layouts.admin.app')
 @section('content')
     <div class="container">
         <div class="row" style="margin:1px">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header container-fluid bg-success text-light py-2">
+                    {{-- <div class="card-header container-fluid bg-success text-light py-2">
                         <h2 style="text-align: center">Per Sale List
                             <a type="button" href="{{ route('sales.payment', $sale->id) }}"
                                 title="Payments" class="btn btn-info" style="float: left; margin-left: 20px;">
@@ -15,7 +15,7 @@
                                 Home
                             </a>
                         </h2>
-                    </div>
+                    </div> --}}
                     <div>
                         @if (session()->has('success'))
                             <div class="alert-info" role="alert">
@@ -28,7 +28,7 @@
                     <div class="card-body">
                         
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-sm table-hover ">
                                 <thead>
                                     <tr>
                                         <th>ID</th>

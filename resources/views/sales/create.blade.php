@@ -1,34 +1,34 @@
-@extends('sales.master')
+@extends('layouts.admin.app')
 @section('content')
     <div class="container-fluid bg-success text-light py-1 ">
         <header class="text-center">
-            <h1 class="display-10">Sales Entry</h1>
+            <h4>Sales Entry</h4>
         </header>
     </div>
-    <section class="container my-2 w-100  text-black p-2 border border-primary rounded">
+    <section class="container my-2 w-125 text-black">
 
         <form class="row g-3 p-2" method="post" action="{{route('sales.store')}}">
             @csrf
             @method('post')
-            <div class="col-md-4">
+            <div class="form-group col-md-3">
                 <label for="inputFactory" class="form-label">Factory Name</label>
-                <select id="inputFactory" class="form-select" name="factory_id">
+                <select id="inputFactory" class="form-control" name="factory_id">
                     <option selected>Choose...</option>
                     @foreach($factories as $factory)
                     <option value="{{$factory->id}}">{{$factory->factory_owner}}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="col-md-4">
+            <div class="form-group col-md-3">
                 <label for="inputDriver" class="form-label">Driver Name</label>
-                <select id="inputDriver" class="form-select" name="driver_id">
+                <select id="inputDriver" class="form-control" name="driver_id">
                     <option selected>Choose...</option>
                     @foreach($drivers as $driver)
                     <option value="{{$driver->id}}">{{$driver->name}}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                     <label for="date" class="form-label">Date</label>
                     <input type="date" class="form-control" id="date" name="date">
             </div>
@@ -88,8 +88,8 @@
                 <label for="inputDescription" class="form-label">Description</label>
                 <input type="text" class="form-control" name="Description" id="inputDescription">
             </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="submit" class="btn btn-primary me-md-3">Add New Sale</button>
+            <div>
+                <button type="submit" class="btn btn-primary">Add New Sale</button>
             </div>
             <script>
                 function multiplyBy()

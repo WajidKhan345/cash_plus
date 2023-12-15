@@ -1,4 +1,4 @@
-@extends('factories.master')
+{{-- @extends('factories.master')
 @section('content')
     <div class="container">
         <div class="row" style="margin:20px;">
@@ -86,4 +86,75 @@
             </div>
         </div>
     </div>
+@endsection --}}
+
+@extends('layouts.admin.app')
+@section('content')
+<div class="card">
+    <div class="card-header">
+      <h2 class="card-title text-lg text-center w-100">All Factories List
+        <a href="{{ route('factories.create') }}" class="btn btn-info float-right" title="Add New Factory">
+            Add New Factory <i class="fa fa-plus-square"></i> 
+        </a>
+      </h2>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <table id="example1" class="table table-bordered table-striped table-sm table-hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Owners Names</th>
+            <th>Factories Names</th>
+            <th>Contact</th>
+            <th>Address</th>
+        </tr>
+        </thead>
+        <tbody>
+            
+            @foreach ($factories as $factory)
+            <tr>
+                <td>{{ $loop->index+1 }}</td>
+                <td>{{ $factory->factory_owner }}</td>
+                <td>{{ $factory->factory_name }}</td>
+                <td>{{ $factory->contact }}</td>
+                <td>{{ $factory->address}}</td>
+
+                <td>
+
+                    <a href="{{ route('factories.edit', ['factory' => $factory])}}"
+                        title="Edit Factory"><button class="btn btn-primary btn-sm"><i
+                                class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            Edit</button></a>
+
+                    <form method="get"
+                        action="{{ route('factories.delete', ['factory' => $factory])}}"
+                        accept-charset="UTF-8" style="display:inline">
+                        @csrf
+                        @method('delete')
+
+                        <button type="submit" class="btn btn-danger btn-sm"
+                            title="Delete Factory"
+                            onclick="return confirm('Are you sure you want to delete this driver?')">
+                            
+                            Delete</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Owners Names</th>
+            <th>Factories Names</th>
+            <th>Contact</th>
+            <th>Address</th>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+    <!-- /.card-body -->
+  </div>
 @endsection
+

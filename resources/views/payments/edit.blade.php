@@ -1,8 +1,8 @@
-@extends('payments.master')
+@extends('layouts.admin.app')
 @section('content')
-    <div class="container-fluid bg-success text-light py-1 ">
+    <div class="container-fluid py-1 ">
         <header class="text-center">
-            <h1 class="display-10"> Edit Payments Entry</h1>
+            <h1> Edit Payments Entry</h1>
         </header>
     </div>
     <section class="container my-2 w-100  text-black p-2 border border-primary rounded">
@@ -24,8 +24,8 @@
                 <label for="inputDescription" class="form-label">Description</label>
                 <input type="text" class="form-control" name="description" id="inputDescription" value="{{$payment->description}}">
             </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="submit" class="btn btn-primary me-md-3">Update Payment</button>
+            <div class="col-md-6 justify-content-md-end">
+                <button type="submit" class="btn btn-primary">Update Payment</button>
             </div>
         </form>
 

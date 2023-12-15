@@ -1,8 +1,8 @@
-@extends('driver.index')
+@extends('layouts.admin.app')
 @section('content')
   
-<div class="card" style="margin:20px;">
-  <div class="card-header text-center bg-primary text-white border-success"><h2>Add New Drivers</h2></div>
+<div class="card">
+  <div class=" text-center bg-secondary text-white border-success"><h4>Add New Drivers</h4></div>
   <div class="card-body">
     
     
@@ -16,7 +16,7 @@
         <input type="text" name="phone_number" id="phone_number" class="form-control"></br>
         <label>Vehicle Number</label></br>
         <input type="text" name="vehicle_number" id="vehicle_number" class="form-control"></br>
-        <input type="submit" value="Add" class="btn btn-success"></br>
+        <input type="submit" value="Add" class="btn btn-primary"></br>
     </form>
     
   </div>

@@ -1,11 +1,11 @@
-@extends('sales.master')
+@extends('layouts.admin.app')
 @section('content')
-    <div class="container-fluid bg-dark text-light py-1 ">
+    <div class="container-fluid bg-info text-light py-1 ">
         <header class="text-center">
-            <h1 class="display-10">Sales Edit</h1>
+            <h4>Sales Edit</h4>
         </header>
     </div>
-    <section class="container my-2 w-100 bg-info text-black p-2">
+    <section class="container my-2 w-100  text-black p-2">
 
         <form class="row g-3 p-2" method="post" action="{{route('sales.update', ['sale' => $sale])}}">
             @csrf

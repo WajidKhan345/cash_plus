@@ -1,12 +1,9 @@
-@extends('factories.master')
+@extends('layouts.admin.app')
 @section('content')
   
-<div class="card" style="margin:20px;">
-  <div class="card-header text-center bg-primary text-white border-success"><h2>Add New Factory</h2></div>
+<div class="card">
+  <div class="card-header text-center bg-primary text-white border-success"><h4>Update Factory</h4></div>
   <div class="card-body">
-    
-    
-
       <form action="{{route('factories.update', ['factory' => $factory])}}" method="post">
         {{-- {!! csrf_field() !!} --}}
         @csrf
@@ -19,7 +16,7 @@
         <input type="text" name="contact" id="contact" class="form-control" value="{{ $factory-> contact}}"></br>
         <label>Address</label></br>
         <input type="text" name="address" id="address" class="form-control" value="{{ $factory-> address}}"></br>
-        <input type="submit" value="Update" class="btn btn-success"></br>
+        <input type="submit" value="Update" class="btn btn-primary"></br>
     </form>
     
   </div>

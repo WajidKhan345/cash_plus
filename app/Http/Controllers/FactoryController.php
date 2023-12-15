@@ -9,7 +9,7 @@ class FactoryController extends Controller
 {
     //
     public function master(){
-        $factory = Factory::all();
+        $factory = Factory::latest()->get();
         return view('factories.show', ['factories' => $factory]);
     }
     public function create(){

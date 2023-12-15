@@ -11,8 +11,8 @@ use Illuminate\Http\Request;
 class SaleController extends Controller
 {
     //
-    public function master(){
-        $sales = Sale::all();
+    public function master(){   
+        $sales = Sale::latest()->get();
         return view('sales.show', ['sales' => $sales]);
     }
 
@@ -49,7 +49,7 @@ class SaleController extends Controller
             'sale_id' => $newSale->id,
             'amount' => $request->recieved_amount,
             'date' => $request->date,
-            'description' => 'First Payment'
+            'description' => $request->description
         ]);
         
         return redirect(route('sales.master'));

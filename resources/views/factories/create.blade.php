@@ -1,8 +1,8 @@
-@extends('factories.master')
+@extends('layouts.admin.app')
 @section('content')
   
-<div class="card" style="margin:30px;">
-  <div class="card-header text-center bg-primary text-white border-success"><h2>Add New Factory</h2></div>
+<div class="card">
+  <div class="card-header text-center bg-primary text-white border-success"><h4>Add New Factory</h4></div>
   <div class="card-body">
     
     
@@ -19,7 +19,7 @@
         <input type="text" name="contact" id="contact" class="form-control"></br>
         <label>Address</label></br>
         <input type="text" name="address" id="address" class="form-control"></br>
-        <input type="submit" value="Add" class="btn btn-success"></br>
+        <input type="submit" value="Add" class="btn btn-primary"></br>
     </form>
     
   </div>

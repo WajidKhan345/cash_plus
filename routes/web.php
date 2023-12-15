@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdduserController;
+use App\Http\Controllers\CashbookController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\FactoryController;
 use App\Http\Controllers\PaymentController;
@@ -22,6 +24,31 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('troute', function(){
+    $names = [
+        1 => ['name' => 'wajid', 'mobile-no.' => '12345786', 'city' => 'Peshawar'],
+        2 => ['name' => 'wajid', 'mobile-no.' => '12345786', 'city' => 'Peshawar'],
+        3 => ['name' => 'wajid', 'mobile-no.' => '12345786', 'city' => 'Karachi'],
+        4 => ['name' => 'wajid', 'mobile-no.' => '12345786', 'city' => 'Lahore'],
+    ];
+    return view('test_route', [
+        'users' => $names,
+        'city' => 'Pehawar',
+        'javascript' => 'Some Js code here'
+        // 'javascript' => '<script>alert("Code Run Successfully");</script>'
+    
+    ]);
+    // return view('test_route')
+    // ->with('name',$wajid)
+    // ->with('laptop', $hp);
+    // return view('test_route')
+    // ->withName($name)
+    // ->withLaptop('HP');
+});
+/* Cashbook routes with a single Resource commond */
+Route::resource('cashbooks', CashbookController::class);
+
 
 /* Drivers Group Routes------START*/
 
@@ -71,13 +98,9 @@ Route::post('payments/update', [PaymentController::class, 'update'])->name('sale
 
 /* Payments Group Routes----- END-------*/
 
-Route::get('/blog/{id}', function(string $id){
-    if($id){
-        return "<h1>Post ID : $id</h1>";
-    }else{
-        return "<h1>NO Id found</h1>";
-    }
-})->whereNumber('id');
+Route::get('/users', [AdduserController::class, 'index'])->name('users.index');
+Route::get('/users/create', [AdduserController::class, 'create'])->name('users.create');
+Route::post('/users/store', [AdduserController::class, 'store'])->name('users.store');
 
 
 
